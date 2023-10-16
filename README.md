@@ -48,51 +48,22 @@ from the package authors, and more. -->
     <img src="https://img.shields.io/badge/Platform-Flutter-02569B?logo=flutter"
       alt="Platform" />
   </a>
-  <a href="https://pub.dartlang.org/packages/animated_text_kit">
-    <img src="https://img.shields.io/pub/v/animated_text_kit.svg"
+  <!-- <a href="packLink">
+    <img src="https://img.shields.io/pub/v"
       alt="Pub Package" />
-  </a>
-  <a href="https://github.com/aagarwal1012/Animated-Text-Kit/actions?query=workflow%3ACI">
-    <img src="https://img.shields.io/github/workflow/status/aagarwal1012/Animated-Text-Kit/CI?logo=github"
-      alt="Build Status" />
-  </a>
-  <br>
-  <a href="https://codecov.io/gh/aagarwal1012/Animated-Text-Kit">
-    <img src="https://codecov.io/gh/aagarwal1012/Animated-Text-Kit/branch/master/graph/badge.svg"
-      alt="Codecov Coverage" />
-  </a>
-  <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/github/license/aagarwal1012/animated-text-kit?color=red"
-      alt="License: MIT" />
-  </a>
-  <a href="https://github.com/Solido/awesome-flutter#animation">
-    <img src="https://img.shields.io/badge/Awesome-Flutter-FC60A8?logo=awesome-lists"
-      alt="Awesome Flutter" />
-  </a>
-  <a href="https://www.paypal.me/aagarwal1012">
-    <img src="https://img.shields.io/badge/Donate-PayPal-00457C?logo=paypal"
-      alt="Donate" />
-  </a>
-</p><br>
+  </a> -->
+
+</p>
 
 # Table of contents
 
 - [Installing](#installing)
+  - [Android](#installing)
 - [Usage](#usage)
-  - [New with Version 3](#new-with-version-3)
-- [Animations](#animations)
-  - [Rotate](#rotate)
-  - [Fade](#fade)
-  - [Typer](#typer)
-  - [Typewriter](#typewriter)
-  - [Scale](#scale)
-  - [Colorize](#colorize)
-  - [TextLiquidFill](#textliquidfill)
-  - [Wavy](#wavy)
-  - [Flicker](#flicker)
-  - [Create your own Animations](#create-your-own-animations)
+  [Smart log report dialog](#smart-log-report-dialog)
+  - [Dialog](#dialog)
+  - [SLog Report Dialog All Parameters](#slog-report-dialog-all-parameters)
 - [Bugs or Requests](#bugs-or-requests)
-- [Contributors](#contributors)
 
 # Installing
 
@@ -127,6 +98,22 @@ Now in your `Dart` code, you can use:
 
 ```dart
 import 'package:smart_logs/smart_logs.dart';
+```
+
+## Android Setup
+
+With Android 11, package visibility is introduced that alters the ability to query installed applications and packages on a user’s device. To enable your application to get visibility into the packages you will need to add a list of queries into your AndroidManifest.xml.
+**Note** To utilize the report dialog with default report button settings on Android, you are required to perform some configuration steps. Here are the necessary instructions:
+
+```
+<manifest package="com.mycompany.myapp">
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.SENDTO" />
+      <data android:scheme="mailto" />
+    </intent>
+  </queries>
+</manifest>
 ```
 
 # Usage
@@ -201,7 +188,7 @@ Smart Report Dialog is a part of Smart log Flutter package that streamlines the 
 
 **Note:** These 3 parameter is required. In which one is positional and two are optional parameter
 
-# SLog Rreport Dialog All Parameters
+# SLog Report Dialog All Parameters
 
 ```dart
 S_LOG_REPORT_DIALOG(
@@ -240,4 +227,4 @@ S_LOG_REPORT_DIALOG(
 
 # Bugs or Requests
 
-If you encounter any problems feel free to open an [issue](https://github.com/aagarwal1012/Animated-Text-Kit/issues/new?template=bug_report.md). If you feel the library is missing a feature, please raise a [ticket](https://github.com/aagarwal1012/Animated-Text-Kit/issues/new?template=feature_request.md) on GitHub and I'll look into it. Pull request are also welcome.
+If you encounter any problems feel free to open an [issue](https://github.com/whizpool/smartlogs-flutter/issues/new?template=bug_report.md). If you feel the library is missing a feature, please raise a [ticket](https://github.com/whizpool/smartlogs-flutter/issues/new?template=feature_request.md) on GitHub and I'll look into it. Pull request are also welcome.
