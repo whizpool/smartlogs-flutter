@@ -15,7 +15,7 @@ dependencies:
   path: ^1.8.3
   archive: ^3.4.5
   intl: ^0.18.1
-  package_info_plus: ^5.0.0
+  package_info_plus: ^4.2.0
   device_info_plus: ^9.0.3
   disk_space: ^0.2.1
   flutter_email_sender: ^6.0.2

@@ -177,7 +177,7 @@
     },
     {
       "name": "package_info_plus",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/package_info_plus-5.0.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/package_info_plus-4.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -332,7 +332,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-10-16T05:07:54.492935Z",
+  "generated": "2023-10-16T06:05:00.447034Z",
   "generator": "pub",
   "generatorVersion": "3.1.2"
 }

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 7.0.0-dev">
+  <meta name="description" content="smart_logs API docs, for the Dart programming language.">
+  <title>smart_logs - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/whizpool/smartlogs-flutter.git">smart_logs package</a></li>
+  </ol>
+  <div class="self-name">smart_logs</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 align="center">Smart Log</h1>
+<p align="center">Introducing a sleek Flutter package designed to streamline user event logging and exception reporting. With this package, users can easily submit bug reports to developers via a user-friendly dialog. Developers can specify their email address, simplifying the process of receiving vital bug reports.
+</p><p align="center">
+  <a href="https://flutter.dev">
+    <img src="https://img.shields.io/badge/Platform-Flutter-02569B?logo=flutter" alt="Platform">
+  </a>
+  <!-- <a href="packLink">
+    <img src="https://img.shields.io/pub/v"
+      alt="Pub Package" />
+  </a> -->
+</p>
+<h1 id="table-of-contents">Table of contents</h1>
+<ul>
+<li><a href="#installing">Installing</a>
+<ul>
+<li><a href="#installing">Android</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a>
+<a href="#smart-log-report-dialog">Smart log report dialog</a>
+<ul>
+<li><a href="#dialog">Dialog</a></li>
+<li><a href="#slog-report-dialog-all-parameters">SLog Report Dialog All Parameters</a></li>
+</ul>
+</li>
+<li><a href="#bugs-or-requests">Bugs or Requests</a></li>
+</ul>
+<h1 id="installing">Installing</h1>
+<h3 id="1-depend-on-it">1. Depend on it</h3>
+<p>Add this to your package's <code>pubspec.yaml</code> file:</p>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+  smart_logs: ^0.0.1
+</code></pre>
+<h3 id="2-install-it">2. Install it</h3>
+<p>You can install packages from the command line:</p>
+<p>with <code>pub</code>:</p>
+<pre class="language-dart"><code>$ pub get
+</code></pre>
+<p>with <code>Flutter</code>:</p>
+<pre class="language-dart"><code>$ flutter pub get
+</code></pre>
+<h3 id="3-import-it">3. Import it</h3>
+<p>Now in your <code>Dart</code> code, you can use:</p>
+<pre class="language-dart"><code class="language-dart">import 'package:smart_logs/smart_logs.dart';
+</code></pre>
+<h2 id="android-setup">Android Setup</h2>
+<p>With Android 11, package visibility is introduced that alters the ability to query installed applications and packages on a user’s device. To enable your application to get visibility into the packages you will need to add a list of queries into your AndroidManifest.xml.
+<strong>Note</strong> To utilize the report dialog with default report button settings on Android, you are required to perform some configuration steps. Here are the necessary instructions:</p>
+<pre class="language-dart"><code>&lt;manifest package="com.mycompany.myapp"&gt;
+  &lt;queries&gt;
+    &lt;intent&gt;
+      &lt;action android:name="android.intent.action.SENDTO" /&gt;
+      &lt;data android:scheme="mailto" /&gt;
+    &lt;/intent&gt;
+  &lt;/queries&gt;
+&lt;/manifest&gt;
+</code></pre>
+<h1 id="usage">Usage</h1>
+<p><code>Smart Log</code> This package offers a range of methods for various functionalities. However, to ensure smooth operation, it's crucial to initialize it first. You can initialize it from anywhere in your app, but it's advisable to call the initialize method in the <code>main</code> function for optimal performance. like:</p>
+<pre class="language-dart"><code class="language-dart">main(){
+    // your code
+   Slog.initializeSLog();
+}
+</code></pre>
+<p>It has many configurable properties <code>(Optional)</code>, including:</p>
+<ul>
+<li><code>forceFullyDelete</code> – to delete everything related to logs. like zip, json and .log files</li>
+<li><code>daysToDeleteLog</code> – To remove logs created before a specified date, this parameter is set to delete logs older than 7 days by default.</li>
+<li><code>logFolderName</code> – to designate the name of your log file folder or directory...</li>
+<li><code>logZipFileName</code> – to designate the name of your log zip file.</li>
+<li><code>jsonFileName</code> – to designate the name of your json file.</li>
+</ul>
+<p>There are also custom setter's, getter's, callbacks:</p>
+<ul>
+<li><code>setForceFullyDelete(bool value)</code> – When set to true, this setter will forcibly delete all data related to logs.</li>
+<li><code>setZipPassword(String value)</code> – This setter method allows you to add a password to zip file created.</li>
+<li><code>getLogFileAsText</code> – This getter returns the current log file content as a string.</li>
+<li><code>addLog(String message, {Exception? exception})</code> – This method adds your log message to the log file. The exception parameter is optional and can be used to include an exception in the log message.</li>
+<li><code>getLogAsZip()</code> - This callback creates a zip file of the log files and returns the path to the zip file.</li>
+</ul>
+<p><strong>Note:</strong>
+You might encounter a <code>NotInitializationException</code> if you call an <code>instance</code> of SLog directly. When the initialize method is called, it takes some time for initialization. It is recommended to <code>await</code> the initialization method to ensure that the necessary setup is completed before using SLog <code>instances</code>.</p>
+<!-- ## First version
+
+Version 3 refactored the code so that common animation controls were moved to
+`AnimatedTextKit` and all animations, except for `TextLiquidFill`, extend from
+`AnimatedText`. This saved hundreds of lines of duplicate code, increased
+consistency across animations, and makes it easier to create new animations.
+
+It also makes the animations more flexible because multiple animations may now
+be easily combined. For example: -->
+<pre class="language-dart"><code class="language-dart">// Adding log
+Slog.instance.addLog('your message');
+// Log with exception
+Slog.instance.addLog('your message', exception:YourException());
+</code></pre>
+<pre class="language-dart"><code class="language-dart">// Getting File content as String
+Slog.instance.getLogFileAsText;
+// Log with exception
+Slog.instance.addLog('your message', exception:YourException());
+</code></pre>
+<h3 id="smart-log-report-dialog">Smart log report dialog</h3>
+<p>Smart Report Dialog is a part of Smart log Flutter package that streamlines the process of collecting user bug reports. Users can enter their bug report messages, and when they tap the send button, they are redirected to their email app with a pre-configured email. The email includes two default attachments: a zipped log file and a deviceinfo.json file containing device information. This dialog is highly customizable, allowing you to modify the title, hintText, buttonTitle, buttonStyle, and the dialog's background. You can also customize the send button callback to provide your own functionality. This package simplifies the bug reporting process, enhancing the user experience.</p>
+<h2 id="dialog">Dialog</h2>
+<img src="https://github.com/ahmad-whizpool/example_package/assets/143999277/44ce9750-be15-45a3-975a-ab51040d3540" align="right" height="300px">
+<pre class="language-dart"><code class="language-dart"> SLogReportDialog.S_LOG_REPORT_DIALOG(
+    context,
+    sendToEmail: 'example@gmail.com',
+    emailsubject: 'Example Bug by user',
+    );
+</code></pre>
+<p><strong>Note:</strong> These 3 parameter is required. In which one is positional and two are optional parameter</p>
+<h1 id="slog-report-dialog-all-parameters">SLog Report Dialog All Parameters</h1>
+<pre class="language-dart"><code class="language-dart">S_LOG_REPORT_DIALOG(
+    BuildContext context, {
+    required String emailsubject,
+    required String sendToEmail,
+    bool dialogBarrierDismissible = false,
+    ButtonStyle? sendButtonStyle,
+    BoxDecoration? topContainerDecoration,
+    Color dialogBackgroundColor = Colors.white,
+    Color? reportbodyBackgrounColor,
+    Color dialogBarrierColor = Colors.black38,
+    Color? dividerColor,
+    Color toastBackGround = Colors.black,
+    Color toastTextColor = Colors.white,
+    double dialogElevation = 0,
+    double dialogWithOpacity = .5,
+    double toastFontSize = 15,
+    EdgeInsetsGeometry? dialogWidgetsPadding,
+    Function()? reportButtonPress,
+    IconData buttonIcon = CupertinoIcons.paperplane_fill,
+    int minmumBodyLength = 10,
+    String hintText = 'Write here about your bug detail',
+    String? minmumToastText,
+    ToastGravity toastGravity = ToastGravity.BOTTOM,
+    List&lt;String&gt;? sendToEmails,
+    List&lt;String&gt;? cc,
+    List&lt;String&gt;? bcc,
+    TextStyle? bodyTextStyle,
+    TextStyle? hintTextStyle,
+    Widget? buttonTitle,
+    Widget? divider,
+    Widget? reportTitle,
+  })
+</code></pre>
+<h1 id="bugs-or-requests">Bugs or Requests</h1>
+<p>If you encounter any problems feel free to open an <a href="https://github.com/whizpool/smartlogs-flutter/issues/new?template=bug_report.md">issue</a>. If you feel the library is missing a feature, please raise a <a href="https://github.com/whizpool/smartlogs-flutter/issues/new?template=feature_request.md">ticket</a> on GitHub and I'll look into it. Pull request are also welcome.</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="smart_logs">
+  <span class="name"><a href="smart_logs/smart_logs-library.html">smart_logs</a></span> 
+
+</dt>
+<dd>Smart Logs package.
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="https://github.com/whizpool/smartlogs-flutter.git">smart_logs package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">smart_logs</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="smart_logs/smart_logs-library.html">smart_logs</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    smart_logs
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

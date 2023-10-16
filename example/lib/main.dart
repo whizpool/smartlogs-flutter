@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Slog.initializeSLog(daysToDeleteLog: 0);
+  await Slog.initializeSLog();
   runApp(const MyApp());
 }
 

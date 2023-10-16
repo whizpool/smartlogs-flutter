@@ -11,6 +11,7 @@ class Slog {
 
   static String _logZipFileName = 'logs.zip';
   static String _jsonFileName = 'deviceInfo.json';
+  static String _zipFolderName = 'NewZip';
 
   static String? _logFileName;
   static String? _zipPassword;
@@ -62,16 +63,18 @@ class Slog {
     int daysToDeleteLog = 7,
     String logFolderName = 'Logs',
     String logZipFileName = 'logs.zip',
+    String zipFolderName = 'New Zip',
     String jsonFileName = 'deviceInfo.json',
   }) async {
     if (_instance == null) {
-      _logDirectory = await _getDirectory();
-      _logFileName = _getLogFileName();
       _forceFullyDelete = forceFullyDelete;
       _daysToDeleteLog = daysToDeleteLog;
       _logFolderName = logFolderName;
       _logZipFileName = logZipFileName;
       _jsonFileName = jsonFileName;
+      _zipFolderName = zipFolderName;
+      _logDirectory = await _getDirectory();
+      _logFileName = _getLogFileName();
       // initializing instance
       _instance = Slog._();
       if (_logDirectory != null) {
@@ -249,7 +252,8 @@ class Slog {
     final zipEncoder = ZipFileEncoder(password: _zipPassword);
 
     if (_logDirectory != null) {
-      final zipPath = '${_logDirectory!.parent.path}/NewZip/$_logZipFileName';
+      final zipPath =
+          '${_logDirectory!.parent.path}/$_zipFolderName/$_logZipFileName';
       zipEncoder.create(zipPath);
       zipEncoder.addDirectory(_logDirectory!);
       zipEncoder.close();

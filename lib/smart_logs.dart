@@ -1,3 +1,7 @@
+/// Smart Logs package.
+///
+/// This is the package which provide loging system and report dialog to the developer to make their loging easy.
+
 library smart_logs;
 
 import 'dart:io';
