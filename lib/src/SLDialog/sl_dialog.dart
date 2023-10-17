@@ -1,14 +1,16 @@
+// ignore_for_file: non_constant_identifier_names
+
 part of smart_logs;
 
+// Use to show SL bottomsheet
 class SLDialog {
-  // ignore: non_constant_identifier_names
   static SL_DIALOG(
     BuildContext context, {
     bool dialogBarrierDismissible = false,
-    ButtonStyle? sendButtonStyle,
+    ButtonStyle? reportButtonStyle,
     BoxDecoration? topContainerDecoration,
     Color? dialogBackgroundColor,
-    Color? reportbodyBackgrounColor,
+    Color? emailBodyTextFieldBackgrounColor,
     Color dialogBarrierColor = Colors.black38,
     Color? lineColor,
     Color toastBackGround = Colors.black,
@@ -18,9 +20,9 @@ class SLDialog {
     double toastFontSize = 15,
     EdgeInsetsGeometry? dialogWidgetsPadding,
     Function()? reportButtonPress,
-    IconData buttonIcon = CupertinoIcons.paperplane_fill,
-    int minmumBodyLength = 10,
-    int maxTextLength = 4000,
+    IconData reportButtonIcon = CupertinoIcons.paperplane_fill,
+    int maxEmailBodyTextFieldLines = 10,
+    int maxEmailBodyCharacterLength = 4000,
     String hintText = 'Write here about your bug detail',
     String? minmumToastText,
     required String emailsubject,
@@ -29,9 +31,9 @@ class SLDialog {
     List<String>? sendToEmails,
     List<String>? cc,
     List<String>? bcc,
-    TextStyle? bodyTextStyle,
+    TextStyle? emailBodyTextStyle,
     TextStyle? hintTextStyle,
-    Widget? buttonTitle,
+    Widget? reportButtonTitle,
     Widget? divider,
     Widget? reportTitle,
   }) {
@@ -81,7 +83,7 @@ class SLDialog {
                   autofocus: true,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: reportbodyBackgrounColor ?? Colors.white,
+                    fillColor: emailBodyTextFieldBackgrounColor ?? Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide.none,
@@ -89,22 +91,22 @@ class SLDialog {
                     hintText: hintText,
                     hintStyle: hintTextStyle,
                   ),
-                  maxLines: 11,
-                  maxLength: maxTextLength,
+                  maxLines: maxEmailBodyTextFieldLines,
+                  maxLength: maxEmailBodyCharacterLength,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 ReportButton(
-                  reportController: reportController,
-                  buttonIcon: buttonIcon,
-                  buttonTitle: buttonTitle,
+                  emailBodyTextController: reportController,
+                  reportButtonIcon: reportButtonIcon,
+                  reportButtonTitle: reportButtonTitle,
                   bcc: bcc,
                   cc: cc,
                   emailsubject: emailsubject,
-                  minmumBodyLength: minmumBodyLength,
+                  minmumEmailBodyLength: maxEmailBodyCharacterLength,
                   reportButtonPress: reportButtonPress,
-                  sendButtonStyle: sendButtonStyle,
+                  reportButtonStyle: reportButtonStyle,
                   sendToEmail: sendToEmail,
                   sendToEmails: sendToEmails,
                   toastBackGround: toastBackGround,

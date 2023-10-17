@@ -40,11 +40,10 @@ class _SendBugReportState extends State<SendBugReport> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   elevation: 0,
-      //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      //   title: const Text("Smart Log"),
-      // ),
+      appBar: AppBar(
+        elevation: 0,
+        title: const Text("Smart Log"),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -85,10 +84,10 @@ class _SendBugReportState extends State<SendBugReport> {
               child: ElevatedButton(
                 onPressed: () async {
                   Slog.instance.summaryLog(text: 'User Press Report button');
-                  // await Slog.instance.getJsonFile();
+
                   SLDialog.SL_DIALOG(
                     context,
-                    sendToEmail: 'ahmad.khan@whizpool.com',
+                    sendToEmail: 'example@gmail.com',
                     emailsubject: 'Example Bug by user',
                   );
                 },

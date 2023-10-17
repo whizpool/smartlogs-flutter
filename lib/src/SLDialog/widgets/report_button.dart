@@ -1,15 +1,16 @@
 part of smart_logs;
 
+/// This is button widget which can prefrom sending email to developer account
 class ReportButton extends StatelessWidget {
   const ReportButton(
       {super.key,
-      required this.reportController,
-      required this.buttonIcon,
-      required this.buttonTitle,
+      required this.emailBodyTextController,
+      required this.reportButtonIcon,
+      required this.reportButtonTitle,
       required this.emailsubject,
-      required this.minmumBodyLength,
+      required this.minmumEmailBodyLength,
       required this.reportButtonPress,
-      required this.sendButtonStyle,
+      required this.reportButtonStyle,
       required this.sendToEmail,
       required this.sendToEmails,
       required this.toastBackGround,
@@ -18,33 +19,33 @@ class ReportButton extends StatelessWidget {
       required this.cc,
       required this.bcc});
 
-  final TextEditingController reportController;
-  final IconData buttonIcon;
+  final TextEditingController emailBodyTextController;
+  final IconData reportButtonIcon;
   final Function()? reportButtonPress;
-  final int minmumBodyLength;
+  final int minmumEmailBodyLength;
   final Color toastBackGround;
   final Color toastTextColor;
   final double toastFontSize;
   final String emailsubject;
   final String sendToEmail;
   final List<String>? sendToEmails;
-  final ButtonStyle? sendButtonStyle;
-  final Widget? buttonTitle;
+  final ButtonStyle? reportButtonStyle;
+  final Widget? reportButtonTitle;
   final List<String>? cc;
   final List<String>? bcc;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
       icon: Icon(
-        buttonIcon,
+        reportButtonIcon,
         size: 20,
       ),
       onPressed: reportButtonPress ??
           () async {
-            if (reportController.text.length < 10) {
+            if (emailBodyTextController.text.length < 10) {
               Fluttertoast.cancel();
               Fluttertoast.showToast(
-                msg: 'Message length should be minimum $minmumBodyLength',
+                msg: 'Message length should be minimum $minmumEmailBodyLength',
                 gravity: ToastGravity.BOTTOM,
                 backgroundColor: toastBackGround,
                 textColor: toastTextColor,
@@ -52,7 +53,7 @@ class ReportButton extends StatelessWidget {
               );
             } else {
               Slog.instance.sendReport(
-                body: reportController.text,
+                body: emailBodyTextController.text,
                 subject: emailsubject,
                 sendToEmail: sendToEmail,
                 sendToEmails: sendToEmails,
@@ -62,7 +63,7 @@ class ReportButton extends StatelessWidget {
               Navigator.of(context).pop();
             }
           },
-      style: sendButtonStyle ??
+      style: reportButtonStyle ??
           ElevatedButton.styleFrom(
             elevation: 0,
             minimumSize: const Size(
@@ -70,7 +71,7 @@ class ReportButton extends StatelessWidget {
               45,
             ),
           ),
-      label: buttonTitle ??
+      label: reportButtonTitle ??
           const Text(
             "Send Report",
             style: TextStyle(

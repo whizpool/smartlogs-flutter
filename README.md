@@ -1,4 +1,3 @@
-
 <h1 align="center">Smart Log</h1>
 
 <p align="center">Introducing a sleek Flutter package designed to streamline user event logging and exception reporting. With this package, users can easily submit bug reports to developers via a user-friendly dialog. Developers can specify their email address, simplifying the process of receiving vital bug reports.
@@ -81,9 +80,10 @@ With Android 11, package visibility is introduced that alters the ability to que
 `Smart Log` This package offers a range of methods for various functionalities. However, to ensure smooth operation, it's crucial to initialize it first. You can initialize it from anywhere in your app, but it's advisable to call the initialize method in the `main` function for optimal performance. like:
 
 ```dart
-main(){
-    // your code
-   Slog.initializeSLog();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Slog.initializeSLog();
+  // Your Code
 }
 ```
 

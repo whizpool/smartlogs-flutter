@@ -1,5 +1,6 @@
 part of smart_logs;
 
+/// When instance of smart logs call before initializing it. Then is error will be thrown
 class NotInitializationException implements Exception {
   String message;
   NotInitializationException(
