@@ -328,9 +328,10 @@ packages:
   smart_logs:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      name: smart_logs
+      sha256: d6c0739fc0fdc03547bffe5da22a754ebee83c43747b7f320b7f194adfe6c06f
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.3"
   source_span:
     dependency: transitive

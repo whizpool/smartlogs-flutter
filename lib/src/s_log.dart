@@ -73,8 +73,8 @@ class Slog {
       final zipDirectory =
           Directory('${_logDirectory!.parent.path}/$_zipFolderName');
 
-      if (await zipDirectory.exists()) {
-        await zipDirectory.delete(recursive: true);
+      if (zipDirectory.existsSync()) {
+        zipDirectory.deleteSync(recursive: true);
       }
 
       /// initializing instance
