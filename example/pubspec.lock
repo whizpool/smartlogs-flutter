@@ -329,10 +329,10 @@ packages:
     dependency: "direct main"
     description:
       name: smart_logs
-      sha256: d6c0739fc0fdc03547bffe5da22a754ebee83c43747b7f320b7f194adfe6c06f
+      sha256: "6c1697c2f85250ba4c2cc713176679ddc5513c2dfe2646f3ac205e255e6b665f"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.3"
+    version: "0.0.4"
   source_span:
     dependency: transitive
     description:

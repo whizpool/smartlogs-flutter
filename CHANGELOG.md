@@ -9,3 +9,7 @@
 ## 0.0.3
 
 - Add delete zip file in initialization method
+
+## 0.0.4
+
+- Fix minmum email body length toast

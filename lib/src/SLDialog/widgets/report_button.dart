@@ -2,23 +2,25 @@ part of smart_logs;
 
 /// This is button widget which can prefrom sending email to developer account
 class ReportButton extends StatelessWidget {
-  const ReportButton(
-      {super.key,
-      required this.emailBodyTextController,
-      required this.reportButtonIcon,
-      required this.reportButtonTitle,
-      required this.emailsubject,
-      required this.minmumEmailBodyLength,
-      required this.reportButtonPress,
-      required this.reportButtonStyle,
-      required this.sendToEmail,
-      required this.sendToEmails,
-      required this.toastBackGround,
-      required this.toastFontSize,
-      required this.toastTextColor,
-      required this.cc,
-      required this.bcc});
+  const ReportButton({
+    super.key,
+    required this.emailBodyTextController,
+    required this.reportButtonIcon,
+    required this.reportButtonTitle,
+    required this.emailsubject,
+    required this.minmumEmailBodyLength,
+    required this.reportButtonPress,
+    required this.reportButtonStyle,
+    required this.sendToEmail,
+    required this.sendToEmails,
+    required this.toastBackGround,
+    required this.toastFontSize,
+    required this.toastTextColor,
+    required this.cc,
+    required this.bcc,
+  });
 
+  /// Button parameter which can be adjustable by any user
   final TextEditingController emailBodyTextController;
   final IconData reportButtonIcon;
   final Function()? reportButtonPress;
@@ -42,7 +44,8 @@ class ReportButton extends StatelessWidget {
       ),
       onPressed: reportButtonPress ??
           () async {
-            if (emailBodyTextController.text.length < 10) {
+            /// It will show toast if app user enter email body less then developer defiend length
+            if (emailBodyTextController.text.length < minmumEmailBodyLength) {
               Fluttertoast.cancel();
               Fluttertoast.showToast(
                 msg: 'Message length should be minimum $minmumEmailBodyLength',
