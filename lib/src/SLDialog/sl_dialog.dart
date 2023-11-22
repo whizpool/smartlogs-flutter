@@ -20,7 +20,7 @@ class SLDialog {
     double toastFontSize = 15,
     EdgeInsetsGeometry? dialogWidgetsPadding,
     Function()? reportButtonPress,
-    IconData reportButtonIcon = CupertinoIcons.paperplane_fill,
+    Widget? reportButtonIcon ,
     int maxEmailBodyTextFieldLines = 10,
     int maxEmailBodyCharacterLength = 4000,
     int minimumEmailBodyLength = 10,

@@ -22,7 +22,7 @@ class ReportButton extends StatelessWidget {
 
   /// Button parameter which can be adjustable by any user
   final TextEditingController emailBodyTextController;
-  final IconData reportButtonIcon;
+  final Widget? reportButtonIcon;
   final Function()? reportButtonPress;
   final int minmumEmailBodyLength;
   final Color toastBackGround;
@@ -38,10 +38,11 @@ class ReportButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      icon: Icon(
-        reportButtonIcon,
-        size: 20,
-      ),
+      icon: reportButtonIcon ??
+          const Icon(
+            CupertinoIcons.paperplane_fill,
+            size: 20,
+          ),
       onPressed: reportButtonPress ??
           () async {
             /// It will show toast if app user enter email body less then developer defiend length
@@ -49,7 +50,8 @@ class ReportButton extends StatelessWidget {
               Fluttertoast.cancel();
               Fluttertoast.showToast(
                 msg: 'Message length should be minimum $minmumEmailBodyLength',
-                gravity: ToastGravity.BOTTOM,
+                gravity:
+                    Platform.isIOS ? ToastGravity.CENTER : ToastGravity.BOTTOM,
                 backgroundColor: toastBackGround,
                 textColor: toastTextColor,
                 fontSize: toastFontSize,

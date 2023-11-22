@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "archive",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/archive-3.4.6",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/archive-3.4.9",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -57,7 +57,7 @@
     },
     {
       "name": "device_info_plus",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/device_info_plus-9.0.3",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/device_info_plus-9.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -105,9 +105,9 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/flutter_lints-2.0.3",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/flutter_lints-3.0.1",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "flutter_test",
@@ -123,7 +123,7 @@
     },
     {
       "name": "fluttertoast",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/fluttertoast-8.2.2",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/fluttertoast-8.2.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -153,7 +153,7 @@
     },
     {
       "name": "lints",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/lints-2.1.1",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/lints-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -201,7 +201,7 @@
     },
     {
       "name": "path_provider_android",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/path_provider_android-2.2.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/path_provider_android-2.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -237,9 +237,9 @@
     },
     {
       "name": "plugin_platform_interface",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.6",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.7",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "pointycastle",
@@ -309,9 +309,9 @@
     },
     {
       "name": "win32",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/win32-5.0.9",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/win32-5.1.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.1"
     },
     {
       "name": "win32_registry",
@@ -332,7 +332,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-10-20T10:28:39.345546Z",
+  "generated": "2023-11-22T05:20:45.597223Z",
   "generator": "pub",
   "generatorVersion": "3.1.2"
 }

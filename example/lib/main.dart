@@ -53,7 +53,10 @@ class _SendBugReportState extends State<SendBugReport> {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () async {
-                  Slog.instance.summaryLog(text: 'User Press add log button');
+                  Slog.instance.summaryLog(
+                    text: 'User Press add log button',
+                    shouldSave: false,
+                  );
                 },
                 child: const Text(
                   "Add Log",
@@ -71,6 +74,7 @@ class _SendBugReportState extends State<SendBugReport> {
                       text: 'User Press add log button',
                       exception: e,
                       stackTrace: stackTrace,
+                      shouldSave: false,
                     );
                   }
                 },
@@ -83,7 +87,10 @@ class _SendBugReportState extends State<SendBugReport> {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () async {
-                  Slog.instance.summaryLog(text: 'User Press Report button');
+                  Slog.instance.summaryLog(
+                    text: 'User Press Report button',
+                    shouldSave: false,
+                  );
 
                   SLDialog.SL_DIALOG(
                     context,

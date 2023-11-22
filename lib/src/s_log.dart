@@ -173,13 +173,13 @@ class Slog {
     dynamic exception,
     dynamic stackTrace,
   }) async {
-    final file = await _getLogFile();
-    final contents = file.readAsStringSync();
-
     if (kDebugMode) {
       print(
           'Writing message: $text, Exception: $exception StackTrace: $stackTrace');
     }
+    if (!shouldSave) return;
+    final file = await _getLogFile();
+    final contents = file.readAsStringSync();
 
     /// formating data for adding before log
     var now = DateTime.now();

@@ -13,3 +13,9 @@
 ## 0.0.4
 
 - Fix minmum email body length toast
+
+## 0.0.5
+
+- Fix should save property
+- Change gravity of toast to Center for iOS
+- Change type of reportButtonIcon property to Widget type
