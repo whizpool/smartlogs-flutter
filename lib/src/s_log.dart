@@ -1,4 +1,4 @@
-part of smart_logs;
+part of '../smart_logs.dart';
 
 class Slog {
   /// Private variables which can be used by Slog only
@@ -179,7 +179,7 @@ class Slog {
     }
     if (!shouldSave) return;
     final file = await _getLogFile();
-    final contents = file.readAsStringSync();
+    // final contents = file.readAsStringSync();
 
     /// formating data for adding before log
     var now = DateTime.now();
@@ -187,10 +187,10 @@ class Slog {
     String formattedDate = formatter.format(now);
 
     String newMessage =
-        "$contents$formattedDate: $tag : $text\n${exception != null ? "Exception -> $exception" : ""}\n${stackTrace != null ? "StackTrace -> $stackTrace" : ""}\n";
+        "$formattedDate: $tag : $text\n${exception != null ? "Exception -> $exception" : ""}\n${stackTrace != null ? "StackTrace -> $stackTrace" : ""}\n";
 
     /// Writing the log into log file
-    file.writeAsStringSync(newMessage);
+    file.writeAsStringSync(newMessage, mode: FileMode.append);
   }
 
   /// Method to return Head of Log file which contains information about Device and App

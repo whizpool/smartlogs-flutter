@@ -1,4 +1,4 @@
-part of smart_logs;
+part of '../../../smart_logs.dart';
 
 /// This is button widget which can prefrom sending email to developer account
 class ReportButton extends StatelessWidget {

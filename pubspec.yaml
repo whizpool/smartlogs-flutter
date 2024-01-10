@@ -14,7 +14,7 @@ dependencies:
   path_provider: ^2.1.1
   path: ^1.8.3
   archive: ^3.4.5
-  intl: ^0.18.1
+  intl: ^0.19.0
   package_info_plus: any
   device_info_plus: ^9.0.3
   disk_space: ^0.2.1

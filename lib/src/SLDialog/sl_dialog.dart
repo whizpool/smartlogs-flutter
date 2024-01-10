@@ -1,6 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
-part of smart_logs;
+part of '../../smart_logs.dart';
 
 // Use to show SL bottomsheet
 class SLDialog {
@@ -20,7 +20,7 @@ class SLDialog {
     double toastFontSize = 15,
     EdgeInsetsGeometry? dialogWidgetsPadding,
     Function()? reportButtonPress,
-    Widget? reportButtonIcon ,
+    Widget? reportButtonIcon,
     int maxEmailBodyTextFieldLines = 10,
     int maxEmailBodyCharacterLength = 4000,
     int minimumEmailBodyLength = 10,

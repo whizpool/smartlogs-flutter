@@ -1,4 +1,4 @@
-part of smart_logs;
+part of '../smart_logs.dart';
 
 /// When instance of smart logs call before initializing it. Then is error will be thrown
 class NotInitializationException implements Exception {
