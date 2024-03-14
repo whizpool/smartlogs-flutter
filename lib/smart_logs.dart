@@ -8,7 +8,7 @@ import 'dart:io';
 
 import 'package:archive/archive_io.dart';
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:disk_space/disk_space.dart';
+import 'package:disk_space_upgrade/disk_space_upgrade.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

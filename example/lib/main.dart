@@ -55,7 +55,7 @@ class _SendBugReportState extends State<SendBugReport> {
                 onPressed: () async {
                   Slog.instance.summaryLog(
                     text: 'User Press add log button',
-                    shouldSave: false,
+                    // shouldSave: false,
                   );
                 },
                 child: const Text(
@@ -74,7 +74,7 @@ class _SendBugReportState extends State<SendBugReport> {
                       text: 'User Press add log button',
                       exception: e,
                       stackTrace: stackTrace,
-                      shouldSave: false,
+                      // shouldSave: false,
                     );
                   }
                 },

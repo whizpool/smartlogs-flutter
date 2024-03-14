@@ -19,3 +19,7 @@
 - Fix should save property
 - Change gravity of toast to Center for iOS
 - Change type of reportButtonIcon property to Widget type
+
+## 0.0.6
+
+- change disk_space plugin to disk_space_upgrade

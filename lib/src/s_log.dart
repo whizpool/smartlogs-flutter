@@ -238,7 +238,7 @@ class Slog {
     }
 
     /// Infromation about free available space
-    double diskSpace = await DiskSpace.getFreeDiskSpace ?? 0;
+    double diskSpace = await DiskSpaceUpgrade.getFreeDiskSpace ?? 0;
     final freeSpaceInGB = (diskSpace / 1000).toStringAsFixed(2);
 
     return {
