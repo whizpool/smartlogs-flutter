@@ -13,6 +13,7 @@ class SLDialog {
     Color? emailBodyTextFieldBackgrounColor,
     Color dialogBarrierColor = Colors.black38,
     Color? lineColor,
+    Color? cursorColor,
     Color toastBackGround = Colors.black,
     Color toastTextColor = Colors.white,
     double dialogElevation = 0,
@@ -37,6 +38,7 @@ class SLDialog {
     Widget? reportButtonTitle,
     Widget? divider,
     Widget? reportTitle,
+    TextStyle? textFieldTextStyle,
   }) {
     final reportController = TextEditingController();
     showModalBottomSheet(
@@ -82,6 +84,8 @@ class SLDialog {
                 TextFormField(
                   controller: reportController,
                   autofocus: true,
+                  cursorColor: cursorColor,
+                  style: textFieldTextStyle,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: emailBodyTextFieldBackgrounColor ?? Colors.white,

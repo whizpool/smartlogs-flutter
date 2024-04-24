@@ -23,3 +23,6 @@
 ## 0.0.6
 
 - change disk_space plugin to disk_space_upgrade
+## 0.0.7
+
+- update dependencies
