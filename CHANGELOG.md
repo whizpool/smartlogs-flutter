@@ -26,3 +26,12 @@
 ## 0.0.7
 
 - update dependencies
+## 0.0.8
+
+- add some parameter to dialog for customization
+## 0.0.9
+
+- fix zip file issue
+## 0.0.10
+
+- fix zip file issue

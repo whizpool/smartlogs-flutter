@@ -3,9 +3,9 @@
   "packages": [
     {
       "name": "archive",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/archive-3.4.10",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/archive-3.5.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "async",
@@ -34,12 +34,6 @@
     {
       "name": "collection",
       "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/collection-1.18.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.18"
-    },
-    {
-      "name": "convert",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/convert-3.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -144,12 +138,6 @@
       "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/intl-0.19.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
-    },
-    {
-      "name": "js",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/js-0.7.1",
-      "packageUri": "lib/",
-      "languageVersion": "3.1"
     },
     {
       "name": "leak_tracker",
@@ -260,12 +248,6 @@
       "languageVersion": "3.0"
     },
     {
-      "name": "pointycastle",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/pointycastle-3.7.4",
-      "packageUri": "lib/",
-      "languageVersion": "3.0"
-    },
-    {
       "name": "sky_engine",
       "rootUri": "file:///Users/mac/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -356,7 +338,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-04-23T07:46:41.255120Z",
+  "generated": "2024-05-03T05:22:49.509129Z",
   "generator": "pub",
   "generatorVersion": "3.3.1"
 }

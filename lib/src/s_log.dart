@@ -252,7 +252,7 @@ class Slog {
   }
 
   /// Method to convert log file into zip. base on user need whether they want a protected zip or not
-  Future<String> getLogAsZip() async {
+  Future<String?> getLogAsZip() async {
     final zipEncoder = ZipFileEncoder(password: _zipPassword);
 
     /// Create and store zip file if logDirectory is not null
@@ -260,10 +260,11 @@ class Slog {
       final zipPath =
           '${_logDirectory!.parent.path}/$_zipFolderName/$_logZipFileName';
       zipEncoder.create(zipPath);
-      zipEncoder.addDirectory(_logDirectory!);
+      await zipEncoder.addDirectory(_logDirectory!);
       zipEncoder.close();
+      return zipPath;
     }
-    return zipEncoder.zipPath;
+    return null;
   }
 
   /// Method to create json file which contain only device and app information
@@ -316,7 +317,7 @@ class Slog {
         recipients: [sendToEmail, ...sendToEmails ?? []],
         cc: cc ?? [],
         bcc: bcc ?? [],
-        attachmentPaths: [getZipFile, getJsonFile],
+        attachmentPaths: [getZipFile ?? "", getJsonFile],
         isHTML: false,
       );
 
