@@ -35,3 +35,6 @@
 ## 0.0.10
 
 - fix zip file issue
+## 1.0.0
+
+- fix minor issue related to file creation

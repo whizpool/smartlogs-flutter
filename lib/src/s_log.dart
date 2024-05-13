@@ -1,3 +1,5 @@
+// ignore_for_file: empty_catches
+
 part of '../smart_logs.dart';
 
 class Slog {
@@ -31,7 +33,7 @@ class Slog {
   ///to get current day log file as String
   Future<String> get getLogFileAsText async {
     final file = await _getLogFile();
-    return file.readAsStringSync();
+    return file?.readAsStringSync() ?? "";
   }
 
   /// Setters
@@ -120,24 +122,27 @@ class Slog {
 
   /// When ever file get's created this method should need to be call to add head Text,
   static Future<void> _oneTimeWriteInLog() async {
-    File file = await _getLogFile(true);
+    File? file = await _getLogFile(true);
     final headText = await _getHeadTextOfLogFile();
-    file.writeAsString(headText);
+    file?.writeAsString(headText);
   }
 
   /// Method to get Log file first it will check for directory then for file after that it will return a log file.
-  static Future<File> _getLogFile([bool callFromOneTimeMethod = false]) async {
-    if (!await _logDirectory!.exists()) {
-      await _logDirectory!.create();
-    }
-    File filePath = File("${_logDirectory?.path}/$_logFileName");
-    if (!await filePath.exists()) {
-      await filePath.create();
-      if (!callFromOneTimeMethod) {
-        await _oneTimeWriteInLog();
+  static Future<File?> _getLogFile([bool callFromOneTimeMethod = false]) async {
+    try {
+      if (!await _logDirectory!.exists()) {
+        await _logDirectory!.create(recursive: true);
       }
-    }
-    return filePath;
+      File filePath = File("${_logDirectory?.path}/$_logFileName");
+      if (!await filePath.exists()) {
+        await filePath.create();
+        if (!callFromOneTimeMethod) {
+          await _oneTimeWriteInLog();
+        }
+      }
+      return filePath;
+    } catch (exception) {}
+    return null;
   }
 
   /// Delete log file based on provided days or Force fully delete all logs
@@ -190,7 +195,7 @@ class Slog {
         "$formattedDate: $tag : $text\n${exception != null ? "Exception -> $exception" : ""}\n${stackTrace != null ? "StackTrace -> $stackTrace" : ""}\n";
 
     /// Writing the log into log file
-    file.writeAsStringSync(newMessage, mode: FileMode.append);
+    file?.writeAsStringSync(newMessage, mode: FileMode.append);
   }
 
   /// Method to return Head of Log file which contains information about Device and App
