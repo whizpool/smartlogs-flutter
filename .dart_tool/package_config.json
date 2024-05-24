@@ -87,7 +87,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///Users/mac/flutter/packages/flutter",
+      "rootUri": "file:///Users/mac/development/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -105,13 +105,13 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///Users/mac/flutter/packages/flutter_test",
+      "rootUri": "file:///Users/mac/development/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///Users/mac/flutter/packages/flutter_web_plugins",
+      "rootUri": "file:///Users/mac/development/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -135,9 +135,9 @@
     },
     {
       "name": "intl",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/intl-0.19.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/intl-0.18.1",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.12"
     },
     {
       "name": "leak_tracker",
@@ -249,7 +249,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///Users/mac/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Users/mac/development/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -338,7 +338,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-05-13T04:54:42.577771Z",
+  "generated": "2024-05-24T17:33:46.218249Z",
   "generator": "pub",
-  "generatorVersion": "3.3.1"
+  "generatorVersion": "3.3.3"
 }
