@@ -124,7 +124,16 @@ class Slog {
   static Future<void> _oneTimeWriteInLog() async {
     File? file = await _getLogFile(true);
     final headText = await _getHeadTextOfLogFile();
-    file?.writeAsString(headText);
+
+    try {
+      file?.writeAsString(headText);
+    } catch (exception) {
+      if (exception.toString().contains("No space left on device")) {
+        if (kDebugMode) {
+          print("Error log can't be save due to insuffient storage");
+        }
+      }
+    }
   }
 
   /// Method to get Log file first it will check for directory then for file after that it will return a log file.
@@ -195,7 +204,15 @@ class Slog {
         "$formattedDate: $tag : $text\n${exception != null ? "Exception -> $exception" : ""}\n${stackTrace != null ? "StackTrace -> $stackTrace" : ""}\n";
 
     /// Writing the log into log file
-    file?.writeAsStringSync(newMessage, mode: FileMode.append);
+    try {
+      file?.writeAsStringSync(newMessage, mode: FileMode.append);
+    } catch (exception) {
+      if (exception.toString().contains("No space left on device")) {
+        if (kDebugMode) {
+          print("Error: Can't be logged due to insuffient storage");
+        }
+      }
+    }
   }
 
   /// Method to return Head of Log file which contains information about Device and App
@@ -216,6 +233,11 @@ class Slog {
     headText = '$headText${headLine.replaceAll(RegExp(r'.'), '*')}\n';
 
     return headText;
+  }
+
+  /// method to get device storage info
+  static Future<double> _getDeviceStorageInMbs() async {
+    return await DiskSpaceUpgrade.getFreeDiskSpace ?? 0;
   }
 
   /// method to return information of device and app in a map object.
@@ -243,7 +265,7 @@ class Slog {
     }
 
     /// Infromation about free available space
-    double diskSpace = await DiskSpaceUpgrade.getFreeDiskSpace ?? 0;
+    double diskSpace = await _getDeviceStorageInMbs();
     final freeSpaceInGB = (diskSpace / 1000).toStringAsFixed(2);
 
     return {
@@ -282,22 +304,30 @@ class Slog {
       await zipDirectory.create();
     }
     final jsonFile = File('${zipDirectory.path}/$_jsonFileName');
+    try {
+      if (!await jsonFile.exists()) {
+        await jsonFile.create();
+      }
+      final informationMap = await _getInformationofAppAndDevice();
 
-    if (!await jsonFile.exists()) {
-      await jsonFile.create();
+      /// convert information map into json define formate
+      List<String> keyValuePairs = informationMap.entries
+          .map((entry) => '"${entry.key}": "${entry.value}"')
+          .toList();
+      String formattedJson = keyValuePairs.join(',\n');
+
+      /// Add brackets for proper JSON format
+      formattedJson = '{\n$formattedJson\n}';
+
+      jsonFile.writeAsString(formattedJson);
+    } catch (exception) {
+      if (exception.toString().contains("No space left on device")) {
+        if (kDebugMode) {
+          print("Error: Can't create json file due to insuffient storage");
+        }
+      }
     }
-    final informationMap = await _getInformationofAppAndDevice();
 
-    /// convert information map into json define formate
-    List<String> keyValuePairs = informationMap.entries
-        .map((entry) => '"${entry.key}": "${entry.value}"')
-        .toList();
-    String formattedJson = keyValuePairs.join(',\n');
-
-    /// Add brackets for proper JSON format
-    formattedJson = '{\n$formattedJson\n}';
-
-    jsonFile.writeAsString(formattedJson);
     return jsonFile.path;
   }
 

@@ -38,3 +38,6 @@
 ## 1.0.0
 
 - fix minor issue related to file creation
+## 1.0.1
+
+- handle No space left on device exception

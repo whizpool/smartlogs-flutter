@@ -32,7 +32,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  smart_logs: ^1.0.0
+  smart_logs: ^1.0.1
 ```
 
 ### 2. Install it
@@ -100,7 +100,7 @@ There are also custom setter's, getter's, callbacks:
 - `setForceFullyDelete(bool value)` – When set to true, this setter will forcibly delete all data related to logs.
 - `setZipPassword(String value)` – This setter method allows you to add a password to zip file created.
 - `getLogFileAsText` – This getter returns the current log file content as a string.
-- `addLog(String message, {Exception? exception})` – This method adds your log message to the log file. The exception parameter is optional and can be used to include an exception in the log message.
+- `summaryLog({ String tag = "Message", required String text, bool shouldSave = true, dynamic exception,dynamic stackTrace,}` – This method adds your log message to the log file. The exception parameter is optional and can be used to include an exception in the log message.
 - `getLogAsZip()` - This callback creates a zip file of the log files and returns the path to the zip file.
 
 **Note:**
@@ -118,16 +118,16 @@ be easily combined. For example: -->
 
 ```dart
 // Adding log
-Slog.instance.addLog('your message');
+Slog.instance.summaryLog(text:'your message');
 // Log with exception
-Slog.instance.addLog('your message', exception:YourException());
+Slog.instance.summaryLog(text:'your message', exception:YourException());
 ```
 
 ```dart
 // Getting File content as String
 Slog.instance.getLogFileAsText;
 // Log with exception
-Slog.instance.addLog('your message', exception:YourException());
+Slog.instance.summaryLog(text:'your message', exception:YourException(),stackTrace:StackTrace() );
 ```
 
 ### Smart log report dialog
@@ -139,29 +139,30 @@ Smart Report Dialog is a part of Smart log Flutter package that streamlines the 
 <img src="https://github.com/ahmad-whizpool/example_package/assets/143999277/44ce9750-be15-45a3-975a-ab51040d3540" align = "right" height = "300px">
 
 ```dart
- SLogReportDialog.S_LOG_REPORT_DIALOG(
+ SLDialog.SL_DIALOG(
     context,
     sendToEmail: 'example@gmail.com',
     emailsubject: 'Example Bug by user',
     );
 ```
 
-**Note:** These 3 parameter is required. In which one is positional and two are optional parameter
+**Note:** These 3 parameter is required. In which one is positional and two are named parameter
 
 # SLog Report Dialog All Parameters
 
 ```dart
-S_LOG_REPORT_DIALOG(
+SL_DIALOG(
     BuildContext context, {
     required String emailsubject,
     required String sendToEmail,
     bool dialogBarrierDismissible = false,
-    ButtonStyle? sendButtonStyle,
+    ButtonStyle? reportButtonStyle,
     BoxDecoration? topContainerDecoration,
-    Color dialogBackgroundColor = Colors.white,
-    Color? reportbodyBackgrounColor,
+    Color? dialogBackgroundColor,
+    Color? emailBodyTextFieldBackgrounColor,
     Color dialogBarrierColor = Colors.black38,
-    Color? dividerColor,
+    Color? lineColor,
+    Color? cursorColor,
     Color toastBackGround = Colors.black,
     Color toastTextColor = Colors.white,
     double dialogElevation = 0,
@@ -169,19 +170,23 @@ S_LOG_REPORT_DIALOG(
     double toastFontSize = 15,
     EdgeInsetsGeometry? dialogWidgetsPadding,
     Function()? reportButtonPress,
-    IconData buttonIcon = CupertinoIcons.paperplane_fill,
-    int minmumBodyLength = 10,
+    Widget? reportButtonIcon,
+    int maxEmailBodyTextFieldLines = 10,
+    int maxEmailBodyCharacterLength = 4000,
+    int minimumEmailBodyLength = 10,
     String hintText = 'Write here about your bug detail',
     String? minmumToastText,
+    
     ToastGravity toastGravity = ToastGravity.BOTTOM,
     List<String>? sendToEmails,
     List<String>? cc,
     List<String>? bcc,
-    TextStyle? bodyTextStyle,
+    TextStyle? emailBodyTextStyle,
     TextStyle? hintTextStyle,
-    Widget? buttonTitle,
+    Widget? reportButtonTitle,
     Widget? divider,
     Widget? reportTitle,
+    TextStyle? textFieldTextStyle,
   })
 ```
 
