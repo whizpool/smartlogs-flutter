@@ -339,6 +339,7 @@ class Slog {
     required String sendToEmail,
     List<String>? cc,
     List<String>? bcc,
+  required  List<String>? attachmentsPaths,
   }) async {
     try {
       /// Getting zipFile and JsonFile path's
@@ -352,7 +353,7 @@ class Slog {
         recipients: [sendToEmail, ...sendToEmails ?? []],
         cc: cc ?? [],
         bcc: bcc ?? [],
-        attachmentPaths: [getZipFile ?? "", getJsonFile],
+        attachmentPaths: [getZipFile ?? "", getJsonFile, ...?attachmentsPaths],
         isHTML: false,
       );
 

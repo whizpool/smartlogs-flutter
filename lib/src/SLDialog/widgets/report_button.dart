@@ -18,6 +18,7 @@ class ReportButton extends StatelessWidget {
     required this.toastTextColor,
     required this.cc,
     required this.bcc,
+    required this.attachmentsPaths,
   });
 
   /// Button parameter which can be adjustable by any user
@@ -35,6 +36,7 @@ class ReportButton extends StatelessWidget {
   final Widget? reportButtonTitle;
   final List<String>? cc;
   final List<String>? bcc;
+  final List<String>? attachmentsPaths;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
@@ -64,6 +66,7 @@ class ReportButton extends StatelessWidget {
                 sendToEmails: sendToEmails,
                 cc: cc,
                 bcc: bcc,
+                attachmentsPaths: attachmentsPaths,
               );
               Navigator.of(context).pop();
             }
