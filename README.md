@@ -32,7 +32,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  smart_logs: ^1.0.1
+  smart_logs: ^1.0.2
 ```
 
 ### 2. Install it
@@ -181,6 +181,7 @@ SL_DIALOG(
     List<String>? sendToEmails,
     List<String>? cc,
     List<String>? bcc,
+    List<String>? attachmentsPaths,
     TextStyle? emailBodyTextStyle,
     TextStyle? hintTextStyle,
     Widget? reportButtonTitle,

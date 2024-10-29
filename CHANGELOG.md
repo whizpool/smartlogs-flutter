@@ -41,3 +41,6 @@
 ## 1.0.1
 
 - handle No space left on device exception
+## 1.0.2
+
+- allow to add external attachment to email
