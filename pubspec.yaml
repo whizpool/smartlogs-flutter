@@ -15,13 +15,12 @@ dependencies:
   path: ^1.8.3
   archive: ^3.5.0
   intl: ^0.20.0
-  package_info_plus: ^8.1.1
-  device_info_plus: ^11.1.1
+  package_info_plus: ^8.0.0
+  device_info_plus: ^10.1.0
   disk_space_upgrade: ^0.0.1
   flutter_email_sender: ^6.0.2
   fluttertoast: ^8.2.2
-dependency_overrides:
-  web: ^0.5.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
