@@ -44,3 +44,10 @@
 ## 1.0.2
 
 - allow to add external attachment to email
+
+## 1.0.3
+
+- Update packages
+- Add extra attachment file parameter to zip
+- Add parameters to dialog
+- Update dialog UI

@@ -8,7 +8,7 @@ class SLDialog {
     BuildContext context, {
     bool dialogBarrierDismissible = false,
     ButtonStyle? reportButtonStyle,
-    BoxDecoration? topContainerDecoration,
+    Color? topHandlerColor,
     Color? dialogBackgroundColor,
     Color? emailBodyTextFieldBackgrounColor,
     Color dialogBarrierColor = Colors.black38,
@@ -36,6 +36,7 @@ class SLDialog {
     List<String>? attachmentsPaths,
     TextStyle? emailBodyTextStyle,
     TextStyle? hintTextStyle,
+    TextStyle? counterStyle,
     Widget? reportButtonTitle,
     Widget? divider,
     Widget? reportTitle,
@@ -50,9 +51,8 @@ class SLDialog {
       backgroundColor:
           dialogBackgroundColor ?? const Color.fromARGB(255, 222, 222, 222),
       isScrollControlled: true,
-      showDragHandle: true,
+      // showDragHandle: true,
       useSafeArea: true,
-
       shape: const OutlineInputBorder(
         borderSide: BorderSide.none,
         borderRadius: BorderRadius.only(
@@ -61,6 +61,23 @@ class SLDialog {
       builder: (context) => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
+          SizedBox(
+            height: 15,
+          ),
+          Center(
+            child: Container(
+              width: 50,
+              height: 7,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: topHandlerColor,
+              ),
+            ),
+          ),
+          // ),
+          SizedBox(
+            height: 10,
+          ),
           reportTitle ??
               const Padding(
                 padding: EdgeInsets.only(bottom: 10),
@@ -99,6 +116,17 @@ class SLDialog {
                   ),
                   maxLines: maxEmailBodyTextFieldLines,
                   maxLength: maxEmailBodyCharacterLength,
+                  buildCounter: (_,
+                          {int? currentLength,
+                          int? maxLength,
+                          bool? isFocused}) =>
+                      Container(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      "$currentLength/$maxLength",
+                      style: counterStyle,
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 10,

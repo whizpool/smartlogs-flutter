@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "archive",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/archive-3.5.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/archive-3.6.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -39,27 +39,27 @@
     },
     {
       "name": "crypto",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/crypto-3.0.3",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/crypto-3.0.6",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.4"
     },
     {
       "name": "cupertino_icons",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.6",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.8",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.1"
     },
     {
       "name": "device_info_plus",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/device_info_plus-10.1.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/device_info_plus-10.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "device_info_plus_platform_interface",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/device_info_plus_platform_interface-7.0.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/device_info_plus_platform_interface-7.0.1",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.18"
     },
     {
       "name": "disk_space_upgrade",
@@ -75,13 +75,13 @@
     },
     {
       "name": "ffi",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/ffi-2.1.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/ffi-2.1.3",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
     },
     {
       "name": "file",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/file-7.0.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/file-7.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -93,15 +93,15 @@
     },
     {
       "name": "flutter_email_sender",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/flutter_email_sender-6.0.2",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/flutter_email_sender-6.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/flutter_lints-3.0.1",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/flutter_lints-5.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.5"
     },
     {
       "name": "flutter_test",
@@ -117,13 +117,13 @@
     },
     {
       "name": "fluttertoast",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/fluttertoast-8.2.4",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/fluttertoast-8.2.8",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "http",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/http-1.2.1",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/http-1.2.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -135,9 +135,9 @@
     },
     {
       "name": "intl",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/intl-0.19.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/intl-0.20.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
     },
     {
       "name": "leak_tracker",
@@ -159,9 +159,9 @@
     },
     {
       "name": "lints",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/lints-3.0.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/lints-5.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.5"
     },
     {
       "name": "matcher",
@@ -183,13 +183,13 @@
     },
     {
       "name": "package_info_plus",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/package_info_plus-8.0.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/package_info_plus-8.1.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "package_info_plus_platform_interface",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/package_info_plus_platform_interface-3.0.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/package_info_plus_platform_interface-3.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -201,21 +201,21 @@
     },
     {
       "name": "path_provider",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/path_provider-2.1.2",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/path_provider-2.1.5",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "path_provider_android",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/path_provider_android-2.2.2",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/path_provider_android-2.2.12",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.5"
     },
     {
       "name": "path_provider_foundation",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/path_provider_foundation-2.3.2",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/path_provider_foundation-2.4.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "path_provider_linux",
@@ -231,15 +231,15 @@
     },
     {
       "name": "path_provider_windows",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.2"
     },
     {
       "name": "platform",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/platform-3.1.4",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/platform-3.1.6",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "plugin_platform_interface",
@@ -291,9 +291,9 @@
     },
     {
       "name": "typed_data",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/typed_data-1.3.2",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/typed_data-1.4.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.5"
     },
     {
       "name": "vector_math",
@@ -315,21 +315,21 @@
     },
     {
       "name": "win32",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/win32-5.2.0",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/win32-5.8.0",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.5"
     },
     {
       "name": "win32_registry",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/win32_registry-1.1.2",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/win32_registry-1.1.5",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.4"
     },
     {
       "name": "xdg_directories",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/xdg_directories-1.0.4",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/xdg_directories-1.1.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
     },
     {
       "name": "smart_logs",
@@ -338,7 +338,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-10-29T07:14:12.628427Z",
+  "generated": "2024-11-13T10:34:38.229232Z",
   "generator": "pub",
   "generatorVersion": "3.5.1",
   "flutterRoot": "file:///Users/mac/development/flutter",

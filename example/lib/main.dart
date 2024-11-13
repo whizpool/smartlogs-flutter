@@ -96,6 +96,8 @@ class _SendBugReportState extends State<SendBugReport> {
                     context,
                     sendToEmail: 'example@gmail.com',
                     emailsubject: 'Example Bug by user',
+                    topHandlerColor: Colors.black.withOpacity(.7),
+                    attachmentsPaths: [],
                   );
                 },
                 child: const Text(

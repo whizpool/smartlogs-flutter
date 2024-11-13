@@ -279,7 +279,7 @@ class Slog {
   }
 
   /// Method to convert log file into zip. base on user need whether they want a protected zip or not
-  Future<String?> getLogAsZip() async {
+  Future<String?> getLogAsZip(List<String>? extraAttachementsPaths) async {
     final zipEncoder = ZipFileEncoder(password: _zipPassword);
 
     /// Create and store zip file if logDirectory is not null
@@ -288,6 +288,18 @@ class Slog {
           '${_logDirectory!.parent.path}/$_zipFolderName/$_logZipFileName';
       zipEncoder.create(zipPath);
       await zipEncoder.addDirectory(_logDirectory!);
+      try {
+        for (final filePath in (extraAttachementsPaths ?? [])) {
+          final file = File(filePath);
+          if (file.existsSync()) {
+            await zipEncoder.addFile(file);
+          }
+        }
+      } catch (exception, stackTrace) {
+        if (kDebugMode) {
+          print('Smart_logs: $exception ==> $stackTrace');
+        }
+      }
       zipEncoder.close();
       return zipPath;
     }
@@ -339,11 +351,11 @@ class Slog {
     required String sendToEmail,
     List<String>? cc,
     List<String>? bcc,
-  required  List<String>? attachmentsPaths,
+    required List<String>? attachmentsPaths,
   }) async {
     try {
       /// Getting zipFile and JsonFile path's
-      final getZipFile = await Slog.instance.getLogAsZip();
+      final getZipFile = await Slog.instance.getLogAsZip(attachmentsPaths);
       final getJsonFile = await Slog.instance.getJsonFile();
 
       /// Preparing Email
