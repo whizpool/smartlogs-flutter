@@ -51,3 +51,6 @@
 - Add extra attachment file parameter to zip
 - Add parameters to dialog
 - Update dialog UI
+## 1.0.4
+
+- Update packages

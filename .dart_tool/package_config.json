@@ -51,7 +51,7 @@
     },
     {
       "name": "device_info_plus",
-      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/device_info_plus-10.1.2",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/device_info_plus-11.1.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -338,7 +338,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-11-13T10:34:38.229232Z",
+  "generated": "2024-11-13T12:28:51.859039Z",
   "generator": "pub",
   "generatorVersion": "3.5.1",
   "flutterRoot": "file:///Users/mac/development/flutter",

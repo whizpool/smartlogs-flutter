@@ -365,7 +365,10 @@ class Slog {
         recipients: [sendToEmail, ...sendToEmails ?? []],
         cc: cc ?? [],
         bcc: bcc ?? [],
-        attachmentPaths: [getZipFile ?? "", getJsonFile, ...?attachmentsPaths],
+        attachmentPaths: [
+          getZipFile ?? "",
+          getJsonFile,
+        ],
         isHTML: false,
       );
 
