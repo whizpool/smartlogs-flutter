@@ -338,10 +338,10 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-11-13T12:30:28.617662Z",
+  "generated": "2024-12-19T11:13:47.704278Z",
   "generator": "pub",
-  "generatorVersion": "3.5.1",
+  "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/mac/development/flutter",
-  "flutterVersion": "3.24.1",
+  "flutterVersion": "3.24.5",
   "pubCache": "file:///Users/mac/.pub-cache"
 }

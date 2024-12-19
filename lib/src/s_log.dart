@@ -201,7 +201,7 @@ class Slog {
     String formattedDate = formatter.format(now);
 
     String newMessage =
-        "$formattedDate: $tag : $text\n${exception != null ? "Exception -> $exception" : ""}\n${stackTrace != null ? "StackTrace -> $stackTrace" : ""}\n";
+        "$formattedDate: $tag : $text${exception == null && stackTrace == null ? "\n" : ""}${exception != null ? "\n\t\tException -> $exception" : ""}${stackTrace != null ? "\n\t\tStackTrace -> $stackTrace" : ""}";
 
     /// Writing the log into log file
     try {
