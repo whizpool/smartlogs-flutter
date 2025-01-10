@@ -32,7 +32,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  smart_logs: ^1.0.5
+  smart_logs: ^1.0.6
 ```
 
 ### 2. Install it

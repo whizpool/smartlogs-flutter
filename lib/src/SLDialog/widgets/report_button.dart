@@ -76,6 +76,7 @@ class _ReportButtonState extends State<ReportButton> {
                     fontSize: widget.toastFontSize,
                   );
                 } else {
+                  FocusScope.of(context).unfocus();
                   setState(() {
                     isButtonPress = true;
                   });

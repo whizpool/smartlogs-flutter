@@ -50,3 +50,7 @@
 
 ## 1.0.5
 - Remove extra lines
+
+## 1.0.6
+- Fix UI blocking while creating zip file. 
+- Fix keyboard hiding

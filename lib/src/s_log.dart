@@ -279,31 +279,40 @@ class Slog {
   }
 
   /// Method to convert log file into zip. base on user need whether they want a protected zip or not
-  Future<String?> getLogAsZip(List<String>? extraAttachementsPaths) async {
-    final zipEncoder = ZipFileEncoder(password: _zipPassword);
+  Future<String?> getLogAsZip(List<String>? extraAttachmentsPaths) async {
+    final params = {
+      'logDirectoryPath': _logDirectory!.path,
+      'zipFolderName': _zipFolderName,
+      'zipFileName': _logZipFileName,
+      'zipPassword': _zipPassword,
+      'extraAttachmentsPaths': extraAttachmentsPaths,
+    };
 
-    /// Create and store zip file if logDirectory is not null
-    if (_logDirectory != null) {
-      final zipPath =
-          '${_logDirectory!.parent.path}/$_zipFolderName/$_logZipFileName';
-      zipEncoder.create(zipPath);
-      await zipEncoder.addDirectory(_logDirectory!);
-      try {
-        for (final filePath in (extraAttachementsPaths ?? [])) {
-          final file = File(filePath);
-          if (file.existsSync()) {
-            await zipEncoder.addFile(file);
-          }
-        }
-      } catch (exception, stackTrace) {
-        if (kDebugMode) {
-          print('Smart_logs: $exception ==> $stackTrace');
-        }
-      }
-      zipEncoder.close();
-      return zipPath;
-    }
-    return null;
+    return await compute(_computeGetLogAsZip, params);
+    // final zipEncoder = ZipFileEncoder(password: _zipPassword);
+
+    // /// Create and store zip file if logDirectory is not null
+    // if (_logDirectory != null) {
+    //   final zipPath =
+    //       '${_logDirectory!.parent.path}/$_zipFolderName/$_logZipFileName';
+    //   zipEncoder.create(zipPath);
+    //   await zipEncoder.addDirectory(_logDirectory!);
+    //   try {
+    //     for (final filePath in (extraAttachementsPaths ?? [])) {
+    //       final file = File(filePath);
+    //       if (file.existsSync()) {
+    //         await zipEncoder.addFile(file);
+    //       }
+    //     }
+    //   } catch (exception, stackTrace) {
+    //     if (kDebugMode) {
+    //       print('Smart_logs: $exception ==> $stackTrace');
+    //     }
+    //   }
+    //   zipEncoder.close();
+    //   return zipPath;
+    // }
+    // return null;
   }
 
   /// Method to create json file which contain only device and app information
@@ -388,4 +397,36 @@ class Slog {
       Slog.instance.summaryLog(text: 'Exception while sending email is: $e');
     }
   }
+}
+
+Future<String?> _computeGetLogAsZip(Map<String, dynamic> params) async {
+  final String? logDirectoryPath = params['logDirectoryPath'];
+  final String zipFolderName = params['zipFolderName'];
+  final String zipFileName = params['zipFileName'];
+  final String? zipPassword = params['zipPassword'];
+  final List<String>? extraAttachmentsPaths = params['extraAttachmentsPaths'];
+
+  final zipEncoder = ZipFileEncoder(password: zipPassword);
+
+  if (logDirectoryPath != null) {
+    final logDirectory = Directory(logDirectoryPath);
+    final zipPath = '${logDirectory.parent.path}/$zipFolderName/$zipFileName';
+    zipEncoder.create(zipPath);
+    await zipEncoder.addDirectory(logDirectory);
+    try {
+      for (final filePath in (extraAttachmentsPaths ?? [])) {
+        final file = File(filePath);
+        if (file.existsSync()) {
+          await zipEncoder.addFile(file);
+        }
+      }
+    } catch (exception, stackTrace) {
+      if (kDebugMode) {
+        print('Smart_logs: $exception ==> $stackTrace');
+      }
+    }
+    zipEncoder.close();
+    return zipPath;
+  }
+  return null;
 }
