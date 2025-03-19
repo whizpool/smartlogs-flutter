@@ -54,3 +54,5 @@
 ## 1.0.6
 - Fix UI blocking while creating zip file. 
 - Fix keyboard hiding
+## 1.0.7
+- Update pubspec file
