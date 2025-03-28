@@ -56,3 +56,5 @@
 - Fix keyboard hiding
 ## 1.0.7
 - Update pubspec file
+## 1.0.8
+- Update pubspec file
