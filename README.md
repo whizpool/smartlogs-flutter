@@ -32,7 +32,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  smart_logs: ^1.0.9
+  smart_logs: ^1.1.0
 ```
 
 ### 2. Install it
@@ -176,7 +176,7 @@ SL_DIALOG(
     int minimumEmailBodyLength = 10,
     String hintText = 'Write here about your bug detail',
     String? minmumToastText,
-    
+
     ToastGravity toastGravity = ToastGravity.BOTTOM,
     List<String>? sendToEmails,
     List<String>? cc,
