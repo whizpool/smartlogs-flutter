@@ -87,3 +87,7 @@
 ## 1.1.0
 
 - Add missing parameter to dialog
+
+## 1.1.1
+
+- Update packages

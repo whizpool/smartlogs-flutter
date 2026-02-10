@@ -1,6 +1,6 @@
 name: smart_logs
 description: Smart logs is a package which can be use to log any type of message, exception, stack trace.
-version: 1.1.0
+version: 1.1.1
 homepage: https://github.com/whizpool/smartlogs-flutter.git
 
 environment:
@@ -10,20 +10,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.6
-  path_provider: ^2.1.1
-  path: ^1.8.3
-  archive: ^4.0.5
-  intl: ^0.20.0
-  package_info_plus: ^8.0.0
-  device_info_plus: ^10.1.0
+  cupertino_icons: ^1.0.8
+  path_provider: ^2.1.5
+  path: ^1.9.1
+  archive: ^4.0.7
+  intl: ^ 0.20.2
+  package_info_plus: ^9.0.0
+  device_info_plus: ^12.3.0
   disk_space_upgrade: ^0.0.4
-  flutter_email_sender: ^6.0.2
-  fluttertoast: ^8.2.2
+  flutter_email_sender: ^8.0.0
+  fluttertoast: ^9.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
