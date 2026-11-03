@@ -72,7 +72,7 @@
     },
     {
       "name": "disk_space_upgrade",
-      "version": "0.0.4",
+      "version": "0.0.5",
       "dependencies": [
         "flutter"
       ]

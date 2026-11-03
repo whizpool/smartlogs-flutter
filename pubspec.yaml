@@ -17,7 +17,7 @@ dependencies:
   intl: ^0.20.2
   package_info_plus: ^10.2.2
   device_info_plus: ^13.3.0
-  disk_space_upgrade: ^0.0.4
+  disk_space_upgrade: ^0.0.5
   flutter_email_sender: ^11.2.0
   fluttertoast: ^10.0.2
 

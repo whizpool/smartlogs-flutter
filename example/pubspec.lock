@@ -101,10 +101,10 @@ packages:
     dependency: transitive
     description:
       name: disk_space_upgrade
-      sha256: a34844b149e909774369e938af5db6f4586dcae15ecfd7c8276e3734b892df8e
+      sha256: "812cdbbcb6829bafafef5d54cb22c2b17e4648f1f2c05d4791aa31de4ed63c8f"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4"
+    version: "0.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -475,7 +475,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.1.1"
+    version: "1.1.2"
   source_span:
     dependency: transitive
     description:

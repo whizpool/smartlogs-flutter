@@ -94,4 +94,5 @@
 
 ## 1.1.2
 
-- Update packages and dependencies
+- Update dependencies and add full Swift Package Manager (SPM) support
+- Upgrade disk_space_upgrade to 0.0.5
