@@ -91,3 +91,7 @@
 ## 1.1.1
 
 - Update packages
+
+## 1.1.2
+
+- Update packages and dependencies
